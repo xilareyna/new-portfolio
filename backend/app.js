@@ -34,6 +34,11 @@ mongoose.connection.once("open", () => {
 });
 
 //============
+//Controllers
+//============
+app.use("/api/form", formController);
+
+//============
 //Listen Port
 //============
 app.listen(PORT, () => {
