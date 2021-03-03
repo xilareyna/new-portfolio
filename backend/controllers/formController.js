@@ -29,6 +29,19 @@ form.get("/", async (req, res) => {
 });
 
 //==============
+// Edit Route
+//=============
+
+form.get("/:id/edit", async (req, res) => {
+  try {
+    const foundForm = await Form.find({});
+    res.status(200).json(foundForm);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
+
+//==============
 // Delete Route
 //=============
 
