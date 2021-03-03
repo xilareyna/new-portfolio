@@ -8,6 +8,38 @@ export default (props) => {
   const imageInput = useRef(null);
   const linkInput = useRef(null);
 
+  /////////
+  //Read
+  /////////
+  const fetchForm = async () => {
+    try {
+      const response = await fetch("https://localhost:3000");
+      const data = await response.json();
+      setForm(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  /////////
+  //Delete
+  /////////
+  const deleteForm = async (id) => {
+    try {
+      const response = await fetch(`https://localhost:3000/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      const data = await response.json();
+      const filteredPost = form.filter((item) => item._id !== data._id);
+      setForm(filteredPost);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const createProjectEntry = async (event) => {
     event.preventDefault();
     const title = titleInput.current.value;
@@ -42,16 +74,45 @@ export default (props) => {
     }
   };
 
-  return (
-    <form onSubmit={createProjectEntry} className="projects">
-      <input type="text" ref={titleInput} placeholder="title" />
-      <input type="text" ref={descriptionInput} placeholder="description" />
-      <br />
-      <input type="text" ref={imageInput} placeholder="image link" />
-      <input type="text" ref={linkInput} placeholder="link" />
-      <br />
+  useEffect(() => {
+    fetchForm();
+  }, [form]);
 
-      <input type="submit" value="Add to portfolio" />
-    </form>
+  return (
+    <div>
+      <form onSubmit={createProjectEntry} className="projects">
+        <input type="text" ref={titleInput} placeholder="title" />
+        <input type="text" ref={descriptionInput} placeholder="description" />
+        <br />
+        <input type="text" ref={imageInput} placeholder="image link" />
+        <input type="text" ref={linkInput} placeholder="link" />
+        <br />
+
+        <input type="submit" value="Add to portfolio" />
+      </form>
+      <ul className="posts">
+        {form.map((item) => {
+          return (
+            <li key={item._id} className="journal">
+              <br />
+              <h3>
+                {item.title} {item.description}
+              </h3>
+              <p>{item.image}</p>
+              <br />
+              <button
+                onClick={(event) => {
+                  deleteForm(item._id);
+                }}
+                id="delete"
+              >
+                Delete
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+      ;
+    </div>
   );
 };
