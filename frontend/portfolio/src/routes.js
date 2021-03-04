@@ -22,7 +22,7 @@ const routes = [
     component: Form,
   },
   {
-    path: "/Portfolio",
+    path: "/portfolio",
     name: "Portfolio",
     component: Projects,
   },
