@@ -2,6 +2,8 @@ require("dotenv").config();
 
 const express = require("express");
 const app = express();
+const cors = require("cors");
+
 const PORT = process.env.PORT || 3000;
 const mongoose = require("mongoose");
 const MONGOURI = process.env.MONGODB_URI;
@@ -12,6 +14,7 @@ const formController = require("./controllers/formController.js");
 //Middleware
 //============
 app.use(express.json());
+app.use(cors());
 
 //=====================
 //Database Disconnection

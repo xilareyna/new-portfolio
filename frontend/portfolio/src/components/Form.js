@@ -48,7 +48,7 @@ export default (props) => {
     const link = linkInput.current.value;
 
     const body = JSON.stringify({
-      home: {
+      form: {
         title,
         description,
         image,

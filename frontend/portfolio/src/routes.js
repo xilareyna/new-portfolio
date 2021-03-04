@@ -33,5 +33,4 @@ const routes = [
     component: Home,
   },
 ];
-
 export default routes;
