@@ -9,7 +9,7 @@ const Form = require("../models/projectForm.js");
 form.post("/", async (req, res) => {
   try {
     const createdForm = await Form.create(req.body.form);
-    res.status(200).json(updatedForm);
+    res.status(200).json(createdForm);
   } catch (error) {
     res.status(400).json(error);
   }

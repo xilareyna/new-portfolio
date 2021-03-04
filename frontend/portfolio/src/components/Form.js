@@ -13,7 +13,7 @@ export default (props) => {
   /////////
   const fetchForm = async () => {
     try {
-      const response = await fetch("https://localhost:3000");
+      const response = await fetch("http://localhost:3000/api/form");
       const data = await response.json();
       setForm(data);
     } catch (error) {
@@ -26,7 +26,7 @@ export default (props) => {
   /////////
   const deleteForm = async (id) => {
     try {
-      const response = await fetch(`https://localhost:3000/${id}`, {
+      const response = await fetch(`http://localhost:3000/api/form/${id}`, {
         method: "DELETE",
         headers: {
           "Content-type": "application/json",
@@ -55,16 +55,18 @@ export default (props) => {
         link,
       },
     });
+    console.log(body);
     event.currentTarget.reset();
 
     try {
-      const response = await fetch("https://localhost:3000", {
+      const response = await fetch("http://localhost:3000/api/form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: body,
       });
+      console.log(response);
       const data = await response.json();
       setForm([...data.form]);
       console.log(event.currentTarget);
