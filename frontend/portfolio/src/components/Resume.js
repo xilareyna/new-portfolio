@@ -5,8 +5,6 @@ export default (props) => {
   return (
     <div>
       <ul className="ulNavBar">
-        <li className="initial">XJR</li>
-
         <li className="liNavBar">
           <Link to={"/"} className="navLink">
             Home
@@ -24,7 +22,7 @@ export default (props) => {
           </Link>
         </li>
         <li className="liNavBar">
-          <Link to={"/Contact"} className="navLink">
+          <Link to={"/contact"} className="navLink">
             Contact
           </Link>
         </li>
@@ -34,7 +32,14 @@ export default (props) => {
           </Link>
         </li>
       </ul>
-      <h1>contact me</h1>
+      <button>
+        <a
+          href="https://docs.google.com/document/d/12km1nyqT1ZBBHJbBEfTEBxqYVEP69jsWe4iqTxp0RtI/edit?usp=sharing"
+          target="_blank"
+        >
+          Download Resume
+        </a>
+      </button>
     </div>
   );
 };

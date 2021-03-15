@@ -3,8 +3,14 @@ import Contact from "./components/Contact.js";
 import Form from "./components/Form.js";
 import Home from "./components/Home.js";
 import Projects from "./components/Projects.js";
+import Resume from "./components/Resume.js";
 
 const routes = [
+  {
+    path: "/resume",
+    name: "Resume",
+    component: Resume,
+  },
   {
     path: "/about",
     name: "About me",

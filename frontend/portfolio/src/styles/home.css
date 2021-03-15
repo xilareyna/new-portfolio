@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap");
+
+.homeHeading {
+  text-align: center;
+}
+.xilaImg {
+  width: 40%;
+  text-align: center;
+  margin: 0 auto;
+}
+.homeTitle {
+  text-align: center;
+  font-family: "Noto Serif", serif;
+  font-size: 30px;
+}
