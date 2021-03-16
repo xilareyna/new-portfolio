@@ -57,7 +57,7 @@ export default (props) => {
       <h3 className="homeTitle">
         Software Engineer | Designer | Creative Thinker{" "}
       </h3>
-      <h3>Recent Projects</h3>
+      <h3 className="homeRecentProj">Recent Projects</h3>
       <ul className="posts">
         {form.slice(0, 3).map((item) => {
           return (

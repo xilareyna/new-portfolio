@@ -1,10 +1,13 @@
 import { Link, Router, Switch, Route } from "react-router-dom";
 import "../App.css";
+import css from "../styles/resume.css";
 
 export default (props) => {
   return (
-    <div>
+    <div className="resumeBody">
       <ul className="ulNavBar">
+        <li className="initial">XJR</li>
+
         <li className="liNavBar">
           <Link to={"/"} className="navLink">
             Home
@@ -32,10 +35,13 @@ export default (props) => {
           </Link>
         </li>
       </ul>
-      <button>
+      <img src={"images/Resume.png"} className="resumeImg" />
+      <br />
+      <button className="resumeBtn">
         <a
           href="https://docs.google.com/document/d/12km1nyqT1ZBBHJbBEfTEBxqYVEP69jsWe4iqTxp0RtI/edit?usp=sharing"
           target="_blank"
+          className="btnLinkResume"
         >
           Download Resume
         </a>

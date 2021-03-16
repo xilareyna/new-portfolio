@@ -53,7 +53,7 @@ export default (props) => {
           </Link>
         </li>
       </ul>
-      <h1>show my projects</h1>
+      <h1>Portfolio</h1>
       <ul className="posts">
         {form.map((item) => {
           return (

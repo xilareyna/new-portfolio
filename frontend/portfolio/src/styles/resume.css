@@ -1,0 +1,35 @@
+.resumeImg {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+.resumeBody {
+  background-color: #eaeaea;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.resumeBtn {
+  background-color: #9b9999;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #9b9999;
+  margin: 1%;
+  border-radius: 4px;
+  box-shadow: 9px 10px 52px -12px rgb(0 0 0 / 75%);
+  color: white;
+  padding: 1%;
+  font-family: "Noto Serif", serif;
+}
+.btnLinkResume {
+  text-decoration: none;
+  color: white;
+}
+
+.btnLinkResume:hover {
+  font-size: 18px;
+  transition: ease-in 100ms;
+  background-color: #9b9999;
+
+  color: white;
+}

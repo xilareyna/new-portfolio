@@ -13,3 +13,21 @@
   font-family: "Noto Serif", serif;
   font-size: 30px;
 }
+.homeRecentProj {
+  /* padding-left: 2%;
+  font-family: "Noto Serif", serif;
+  font-size: 20px; */
+  /* text-decoration: underline; */
+  position: relative;
+}
+homeRecentProj:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}

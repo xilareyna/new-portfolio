@@ -52,6 +52,7 @@ export default function Show(props) {
           </Link>
         </li>
       </ul>
+      <h1>Show Page</h1>
       <ul className="posts">
         <li key={item._id} className="show">
           <br />
