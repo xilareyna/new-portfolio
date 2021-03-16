@@ -1,26 +1,25 @@
-// import {Projects} from "./Form.js";
-import { React, useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Router, Switch, Route, Link } from "react-router-dom";
 
-import "../App.css";
-
-import { Link, Router, Switch, Route } from "react-router-dom";
-
-export default (props) => {
-  const [form, setForm] = useState([]);
+export default function Show(props) {
+  const [item, setItem] = useState({});
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/form");
-      const json = await response.json();
-      setForm(json);
+      const response = await fetch(
+        `http://localhost:3000/api/form/${props.match.params.id}`
+      );
+      const data = await response.json();
+      setItem(data);
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
   useEffect(() => {
     fetchProducts();
   }, []);
+
   return (
     <div>
       <ul className="ulNavBar">
@@ -53,23 +52,18 @@ export default (props) => {
           </Link>
         </li>
       </ul>
-      <h1>show my projects</h1>
       <ul className="posts">
-        {form.map((item) => {
-          return (
-            <li key={item._id} className="journal">
-              <h3>
-                <Link to={`/project/${item._id}`}>{item.title}</Link>
-                <br />
-
-                {item.description}
-              </h3>
-              <p>{item.image}</p>
-              <br />
-            </li>
-          );
-        })}
+        <li key={item._id} className="show">
+          <br />
+          <h3>
+            {item.title}
+            <br />
+            {item.description}
+          </h3>
+          <p>{item.image}</p>
+          <br />
+        </li>
       </ul>
     </div>
   );
-};
+}

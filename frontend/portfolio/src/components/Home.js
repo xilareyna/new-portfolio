@@ -64,7 +64,9 @@ export default (props) => {
             <li key={item._id} className="journal">
               <br />
               <h3>
-                {item.title} {item.description}
+                <Link to={`/project/${item._id}`}>{item.title}</Link>
+                <br />
+                {item.description}
               </h3>
               <p>{item.image}</p>
               <br />

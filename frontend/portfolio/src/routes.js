@@ -4,8 +4,14 @@ import Form from "./components/Form.js";
 import Home from "./components/Home.js";
 import Projects from "./components/Projects.js";
 import Resume from "./components/Resume.js";
+import Show from "./components/Show.js";
 
 const routes = [
+  {
+    path: "/project/:id",
+    name: "Show",
+    component: Show,
+  },
   {
     path: "/resume",
     name: "Resume",
