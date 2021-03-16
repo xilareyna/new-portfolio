@@ -1,9 +1,25 @@
 import "../App.css";
-// import Pic from "../public/Xila.png";
+import { useRef, useEffect, useState } from "react";
 
 import { Link, Router, Switch, Route } from "react-router-dom";
 import css from "../styles/home.css";
 export default (props) => {
+  const [form, setForm] = useState([]);
+
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/form");
+      const json = await response.json();
+      setForm(json);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
   return (
     <div>
       <ul className="ulNavBar">
@@ -42,6 +58,20 @@ export default (props) => {
         Software Engineer | Designer | Creative Thinker{" "}
       </h3>
       <h3>Recent Projects</h3>
+      <ul className="posts">
+        {form.slice(0, 3).map((item) => {
+          return (
+            <li key={item._id} className="journal">
+              <br />
+              <h3>
+                {item.title} {item.description}
+              </h3>
+              <p>{item.image}</p>
+              <br />
+            </li>
+          );
+        })}
+      </ul>
       <button>
         <Link to={"/portfolio"}>See More</Link>
       </button>

@@ -1,9 +1,26 @@
 // import {Projects} from "./Form.js";
+import { React, useState, useEffect } from "react";
+
 import "../App.css";
 
 import { Link, Router, Switch, Route } from "react-router-dom";
 
 export default (props) => {
+  const [form, setForm] = useState([]);
+
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/api/form");
+      const json = await response.json();
+      setForm(json);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
   return (
     <div>
       <ul className="ulNavBar">
@@ -37,29 +54,20 @@ export default (props) => {
         </li>
       </ul>
       <h1>show my projects</h1>
+      <ul className="posts">
+        {form.map((item) => {
+          return (
+            <li key={item._id} className="journal">
+              <br />
+              <h3>
+                {item.title} {item.description}
+              </h3>
+              <p>{item.image}</p>
+              <br />
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
-
-// const React = require("react");
-
-// class Portfolio extends React.Component {
-//   render() {
-//     // console.log(this.props.fruits);
-//     return (
-//       <Projects title="Portfolio" stylesheet="/style.css" js="/app.js">
-//         <ul className="homePage">
-//           {this.props.form.map((proj) => {
-//             return (
-//               <li class="indexLi">
-//                 {proj.title} {proj.description}
-//               </li>
-//             );
-//           })}
-//         </ul>
-//       </Projects>
-//     );
-//   }
-// }
-
-// module.exports = Portfolio;
