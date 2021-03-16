@@ -69,4 +69,17 @@ form.put("/:id", async (req, res) => {
   }
 });
 
+//==============
+// Show Route
+//=============
+
+form.get("/:id", async (req, res) => {
+  try {
+    const showProject = await form.findById(req.params.id);
+    res.status(200).json(showProject);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
+
 module.exports = form;
