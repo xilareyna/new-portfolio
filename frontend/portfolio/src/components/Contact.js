@@ -1,5 +1,6 @@
 import { Link, Router, Switch, Route } from "react-router-dom";
 import "../App.css";
+import css from "../styles/contact.css";
 
 export default (props) => {
   return (
@@ -34,7 +35,16 @@ export default (props) => {
           </Link>
         </li>
       </ul>
-      <h1>contact me</h1>
+      <img src={"images/contact.png"} className="contactImg" />
+      <ul className="contactBtns">
+        <li className="emailBtn">
+          <a href={"mailto:xilareyna@gmail.com"}>
+            <img src={"images/email.png"} className="emailImg" />
+            <br />
+            Email Me
+          </a>
+        </li>
+      </ul>
     </div>
   );
 };

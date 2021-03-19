@@ -14,20 +14,57 @@
   font-size: 30px;
 }
 .homeRecentProj {
-  /* padding-left: 2%;
+  padding-left: 2%;
   font-family: "Noto Serif", serif;
-  font-size: 20px; */
-  /* text-decoration: underline; */
-  position: relative;
+  font-size: 20px;
 }
-homeRecentProj:before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #fff;
-  visibility: hidden;
-  transition: all 0.3s ease-in-out;
+.projectPostsHome {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.homeProjLi {
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 20px;
+  list-style: none;
+}
+
+.seeMoreBtn {
+  background-color: #9b9999;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #9b9999;
+  border-radius: 4px;
+  box-shadow: 9px 10px 52px -12px rgb(0 0 0 / 75%);
+  color: white;
+  padding: 1%;
+  font-family: "Noto Serif", serif;
+  width: 15%;
+  display: block;
+  margin: auto;
+  text-decoration: none;
+}
+.seeMoreBtnLink {
+  text-decoration: none;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+}
+.seeMoreBtn:hover {
+  font-size: 20px;
+  transition: ease-in 100ms;
+  text-decoration: none !important;
+  color: white;
+}
+#cardTitleHome {
+  font-family: "Noto Serif", serif;
+}
+.projCardLinkHome {
+  color: #7d0400;
+}
+.projCardLinkHome:hover {
+  color: #9b9999;
+  text-decoration: none;
 }

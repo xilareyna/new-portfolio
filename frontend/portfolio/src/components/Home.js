@@ -1,8 +1,12 @@
 import "../App.css";
 import { useRef, useEffect, useState } from "react";
+import * as ReactBootstrap from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Breadcrumb, Card } from "react-bootstrap";
 
 import { Link, Router, Switch, Route } from "react-router-dom";
 import css from "../styles/home.css";
+
 export default (props) => {
   const [form, setForm] = useState([]);
 
@@ -57,25 +61,36 @@ export default (props) => {
       <h3 className="homeTitle">
         Software Engineer | Designer | Creative Thinker{" "}
       </h3>
+      <hr />
       <h3 className="homeRecentProj">Recent Projects</h3>
-      <ul className="posts">
+      <ul className="projectPostsHome">
         {form.slice(0, 3).map((item) => {
           return (
-            <li key={item._id} className="journal">
-              <br />
-              <h3>
-                <Link to={`/project/${item._id}`}>{item.title}</Link>
-                <br />
-                {item.description}
-              </h3>
-              <p>{item.image}</p>
+            <li key={item._id} className="homeProjLi">
+              <Card style={{ width: "18rem" }}>
+                <Card.Body>
+                  <Card.Title id="cardTitleHome">
+                    <Link
+                      to={`/project/${item._id}`}
+                      className="projCardLinkHome"
+                    >
+                      {item.title}
+                    </Link>
+                  </Card.Title>
+                  <Card.Text>{item.description}</Card.Text>
+                  <Card.Text> {item.image}</Card.Text>
+                </Card.Body>
+              </Card>
+
               <br />
             </li>
           );
         })}
       </ul>
-      <button>
-        <Link to={"/portfolio"}>See More</Link>
+      <button className="seeMoreBtn">
+        <Link to={"/portfolio"} className="seeMoreBtnLink">
+          See More
+        </Link>
       </button>
       <h3>Say Hello</h3>
       <p>
