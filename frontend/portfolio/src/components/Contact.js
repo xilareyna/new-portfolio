@@ -37,12 +37,34 @@ export default (props) => {
       </ul>
       <img src={"images/contact.png"} className="contactImg" />
       <ul className="contactBtns">
-        <li className="emailBtn">
-          <a href={"mailto:xilareyna@gmail.com"}>
+        <li className="social">
+          <a href={"mailto:xilareyna@gmail.com"} className="socialLinks">
             <img src={"images/email.png"} className="emailImg" />
             <br />
             Email Me
           </a>
+        </li>
+        <li className="social">
+          <Link
+            to={{ pathname: "https://www.linkedin.com/in/xilareyna/" }}
+            target="_blank"
+            className="socialLinks"
+          >
+            <img src={"images/linkedin.png"} className="emailImg" />
+            <br />
+            Linkedin
+          </Link>
+        </li>
+        <li className="social">
+          <Link
+            to={{ pathname: "https://www.instagram.com/xila___/" }}
+            target="_blank"
+            className="socialLinks"
+          >
+            <img src={"images/insta.png"} className="emailImg" />
+            <br />
+            Instagram
+          </Link>
         </li>
       </ul>
     </div>
