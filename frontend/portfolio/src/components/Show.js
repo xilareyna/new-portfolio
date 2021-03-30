@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Router, Switch, Route, Link } from "react-router-dom";
+import css from "../styles/show.css";
 
 export default function Show(props) {
   const [item, setItem] = useState({});
@@ -21,7 +22,7 @@ export default function Show(props) {
   }, []);
 
   return (
-    <div>
+    <div className="showBody">
       <ul className="ulNavBar">
         <li className="initial">XJR</li>
 
@@ -52,16 +53,18 @@ export default function Show(props) {
           </Link>
         </li>
       </ul>
-      <h1>Show Page</h1>
-      <ul className="posts">
-        <li key={item._id} className="show">
+      <ul className="showUl">
+        <li key={item._id} className="showLi">
+          <h1 className="showH1">{item.title}</h1>
+
           <br />
-          <h3>
-            {item.title}
+          <img src={item.image} className="showImg"></img>
+
+          <p>
+            Technologies used:
             <br />
             {item.description}
-          </h3>
-          <p>{item.image}</p>
+          </p>
           <br />
         </li>
       </ul>

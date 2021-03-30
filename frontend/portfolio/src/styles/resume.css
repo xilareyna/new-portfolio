@@ -1,5 +1,5 @@
 .resumeImg {
-  width: 50%;
+  width: 40%;
   text-align: center;
   margin: 0 auto;
 }
@@ -30,6 +30,5 @@
   font-size: 18px;
   transition: ease-in 100ms;
   background-color: #9b9999;
-
   color: white;
 }

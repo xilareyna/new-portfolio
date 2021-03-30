@@ -78,7 +78,9 @@ export default (props) => {
                     </Link>
                   </Card.Title>
                   <Card.Text>{item.description}</Card.Text>
-                  <Card.Text> {item.image}</Card.Text>
+                  <Card.Text>
+                    <img src={item.image} className="homeProjImg"></img>
+                  </Card.Text>
                 </Card.Body>
               </Card>
 
@@ -92,15 +94,38 @@ export default (props) => {
           See More
         </Link>
       </button>
-      <h3>Say Hello</h3>
-      <p>
-        I am blah jskdfnsafsd i love my dog and i loooove enfinerrringgggg YAAAy
-      </p>
-      <i class="fab fa-instagram">
-        <Link to={"/about"}></Link>
-      </i>
-      <i class="fab fa-github"></i>
-      <i class="fab fa-linkedin"></i>
+
+      <footer className="footerIcons">
+        <ul className="ulFooterIcons">
+          <li className="liFooterIcons">
+            <Link
+              to={{ pathname: "https://www.instagram.com/xila___/" }}
+              target="_blank"
+              className="footerIconLink"
+            >
+              <i class="fab fa-instagram"></i>
+            </Link>
+          </li>
+          <li className="liFooterIcons">
+            <Link
+              to={{ pathname: "https://github.com/xilareyna" }}
+              target="_blank"
+              className="footerIconLink"
+            >
+              <i class="fab fa-github"></i>
+            </Link>
+          </li>
+          <li className="liFooterIcons">
+            <Link
+              to={{ pathname: "https://www.linkedin.com/in/xilareyna/" }}
+              target="_blank"
+              className="footerIconLink"
+            >
+              <i class="fab fa-linkedin"></i>
+            </Link>
+          </li>
+        </ul>
+      </footer>
     </div>
   );
 };

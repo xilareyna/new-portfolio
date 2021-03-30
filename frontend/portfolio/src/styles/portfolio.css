@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap");
+
+.ulProjPosts {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.liProjPosts {
+  text-decoration: none;
+  text-align: center;
+  list-style: none;
+  border: solid 1px #bfbfbf;
+  border-radius: 1%;
+  width: 50%;
+  padding: 1%;
+  margin: 1% auto;
+}
+.projH1 {
+  text-align: center;
+}
+.projBody {
+  background-color: #ededed;
+}
+.portfolioImg {
+  width: 100%;
+  margin-bottom: 1%;
+}
+.portfolioTitle {
+  font-size: 40px;
+  font-family: "Noto Serif", serif;
+  color: #7d0400;
+}

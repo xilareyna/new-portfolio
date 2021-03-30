@@ -32,13 +32,11 @@
 }
 
 .seeMoreBtn {
-  background-color: #9b9999;
   text-align: center;
   font-size: 16px;
   border: 1px solid #9b9999;
   border-radius: 4px;
   box-shadow: 9px 10px 52px -12px rgb(0 0 0 / 75%);
-  color: white;
   padding: 1%;
   font-family: "Noto Serif", serif;
   width: 15%;
@@ -46,18 +44,24 @@
   margin: auto;
   text-decoration: none;
 }
+.seeMoreBtn:hover {
+  transition: ease-in 100ms;
+  background-color: #9b9999;
+  color: white;
+}
 .seeMoreBtnLink {
   text-decoration: none;
-  color: white;
+  color: black;
   margin: 0 auto;
   text-align: center;
 }
-.seeMoreBtn:hover {
-  font-size: 20px;
-  transition: ease-in 100ms;
-  text-decoration: none !important;
+
+.seeMoreBtnLink:hover {
+  text-decoration: none;
+  background-color: #9b9999;
   color: white;
 }
+
 #cardTitleHome {
   font-family: "Noto Serif", serif;
 }
@@ -67,4 +71,30 @@
 .projCardLinkHome:hover {
   color: #9b9999;
   text-decoration: none;
+}
+.footerIcons {
+  text-align: center;
+  font-size: 30px;
+  padding: 1%;
+}
+.footerIconLink {
+  color: #7d0400;
+}
+.footerIconLink:hover {
+  color: #9b9999;
+}
+.ulFooterIcons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3%;
+  justify-content: space-evenly;
+}
+.liFooterIcons {
+  text-decoration: none;
+  text-align: center;
+  font-size: 25px;
+  list-style: none;
+}
+.homeProjImg {
+  width: 100%;
 }

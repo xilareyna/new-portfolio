@@ -1,7 +1,8 @@
 // import {Projects} from "./Form.js";
 import { React, useState, useEffect } from "react";
-
-import "../App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button } from "react-bootstrap";
+import css from "../styles/portfolio.css";
 
 import { Link, Router, Switch, Route } from "react-router-dom";
 
@@ -22,7 +23,7 @@ export default (props) => {
     fetchProducts();
   }, []);
   return (
-    <div>
+    <div className="projBody">
       <ul className="ulNavBar">
         <li className="initial">XJR</li>
 
@@ -53,22 +54,28 @@ export default (props) => {
           </Link>
         </li>
       </ul>
-      <h1>Portfolio</h1>
-      <ul className="posts">
+      <h1 className="projH1">My Projects</h1>
+      <ul className="ulProjPosts">
         {form.map((item) => {
           return (
-            <li key={item._id} className="journal">
-              <h3>
-                <Link to={`/project/${item._id}`}>{item.title}</Link>
-                <br />
-
-                {item.description}
-              </h3>
-              <p>{item.image}</p>
+            <li key={item._id} className="liProjPosts">
+              <h1 className="portfolioTitle">{item.title}</h1>
               <br />
+              <i class={item.description}></i>
+
+              <br />
+              <img src={item.image} className="portfolioImg" />
+              <br />
+              <Button
+                onClick={() => props.history.push(`/project/${item._id}`)}
+                variant="secondary"
+              >
+                See more
+              </Button>
             </li>
           );
         })}
+        <br />
       </ul>
     </div>
   );

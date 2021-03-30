@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap");
+
+.showLi {
+  list-style: none;
+  text-align: center;
+}
+.showImg {
+  width: 50%;
+}
+.showBody {
+  background-color: #eaeaea;
+  font-family: "Noto Serif", serif;
+  background-size: cover;
+}
+.showH1 {
+  color: #7d0400;
+}
